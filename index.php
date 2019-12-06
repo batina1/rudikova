@@ -1,30 +1,15 @@
 <?php
-class A{
-    protected $x;
-	// aX+b = 0
-	function solve($a, $b){
-	    if ($a == 0) {
-		   return false;
-		}
-	    $x = -$b/$a;
-		$this->x = $x;
-		return $x;
-	}
-}
-class B extends A{
-	// ax2 + bx + c = 0
-	protected $x2;
-	protected function discr($a, $b, $c) {
-		$discr = $b*$b - 4*$a*$c;
-		return $discr;
-	}
-	function myaw($a, $b, $c){
-		if ($a == 0) {
-		   return false;
-		}
-		$x = (-1*$b + sqrt($discr))/(2*$a);
-		$x2 = (-1*$b - sqrt($discr))/(2*$a)
-		$this->x = $x;
-		$this->x2 = $x2;
-	}
-}
+ini_set('display_errors', 1); 
+error_reporting (-1); 
+include_once'core/EquationInterface.php';
+include_once'core/LogInterface.php';
+include_once'core/LogAbstract.php';
+include_once 'batina/LineUr.php';
+include_once 'batina/KvadrUr.php';
+include_once 'batina/BatinaException.php';
+include_once 'batina/MyLog.php';
+
+
+    batina\MyLog::log(5675694549549565);
+
+batina\MyLog::write();
