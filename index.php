@@ -9,7 +9,17 @@ include_once 'batina/KvadrUr.php';
 include_once 'batina/BatinaException.php';
 include_once 'batina/MyLog.php';
 
+$arr=array();
 
-    batina\MyLog::log(5675694549549565);
+$arr[] = readline("a= ");
+$arr[] = readline("b= ");
+$arr[] = readline("c= ");
 
+try {
+    $solver = new batina\KvadrUr();
+    batina\MyLog::log("Roots: " . implode(", ", $solver->KvadrUr($arr[0], $arr[1], $arr[2])));
+}catch(batina\BatinaException $e) {
+
+    batina\MyLog::log($e->getMessage());
+}
 batina\MyLog::write();
