@@ -11,13 +11,15 @@ include_once 'batina/MyLog.php';
 
 $arr=array();
 
+batina\MyLog::log('Version '.file_get_contents('./version'));
+
 $arr[] = readline("a= ");
 $arr[] = readline("b= ");
 $arr[] = readline("c= ");
 
 try {
     $solver = new batina\KvadrUr();
-    batina\MyLog::log("Roots: " . implode(", ", $solver->KvadrUr($arr[0], $arr[1], $arr[2])));
+    batina\MyLog::log("Roots: " . implode(", ", $solver->solve($arr[0], $arr[1], $arr[2])));
 }catch(batina\BatinaException $e) {
 
     batina\MyLog::log($e->getMessage());
